@@ -1,57 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-<div class="double-tap-area">
-      <img src="your-image.jpg" alt="Double-tap area" id="image">
-        <div class="heart" id="heart">❤️</div>
-        </div>
-
-        <style>
-          .double-tap-area {
-              position: relative;
-                  width: 300px;
-                      height: 300px;
-                        }
-
-                          .heart {
-                              position: absolute;
-                                  top: 50%;
-                                      left: 50%;
-                                          transform: translate(-50%, -50%) scale(0);
-                                              font-size: 100px;
-                                                  opacity: 0;
-                                                      transition: transform 0.3s, opacity 0.3s;
-                                                        }
-
-                                                          .heart.show {
-                                                              transform: translate(-50%, -50%) scale(1);
-                                                                  opacity: 1;
-                                                                    }
-                                                                    </style>
-
-                                                                    <script>
-                                                                      let lastTap = 0;
-
-                                                                        document.getElementById("image").addEventListener("click", function() {
-                                                                            const currentTime = new Date().getTime();
-                                                                                const tapLength = currentTime - lastTap;
-                                                                                    
-                                                                                        if (tapLength < 300 && tapLength > 0) {
-                                                                                              const heart = document.getElementById("heart");
-                                                                                                    heart.classList.add("show");
-
-                                                                                                          setTimeout(() => {
-                                                                                                                  heart.classList.remove("show");
-                                                                                                                        }, 600); // Adjust duration to match the CSS transition time
-                                                                                                                            }
-                                                                                                                                lastTap = currentTime;
-                                                                                                                                  });
-                                                                                                                                  </script>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+   rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+  crossorigin="anonymous" 
+  />
+   <link rel="stylesheet" href="style.css" />
+   <title>Double Click Heart</title>  
+   </head>
+   <body>
+  <h3>Double click on the image to <i class="fas fa-heart"></i> it</h3>
+  <small>You liked it <span id="times">0</span> times</small>
+   <div class="loveMe"></div>
+   <script src="script.js"></script>
+   </body>
+   </html>
+   
